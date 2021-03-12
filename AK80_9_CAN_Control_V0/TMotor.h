@@ -4,13 +4,13 @@
 class TMotor {
   public:
     //Constructor
-    TMotor (int);
+    TMotor(int);
     //Methods
-    enable (bool);
-    changeMode(int);
-    setpoint (double);
-    setZero ();
-    tick();
+    void enable(bool);
+    void changeMode(int);
+    void setpoint(double);
+    void setZero();
+    void tick();
     double pos();
     double vel();
     double tor();
@@ -18,13 +18,13 @@ class TMotor {
     int kp, kd;
   private:
     //Methods
-    pack_cmd();
-    unpack_reply();
-    float float_to_uint(float, float, float, int)
-    float uint_to_float(unsigned int, float, float, int)
+    void pack_cmd();
+    void unpack_reply();
+    float float_to_uint(float, float, float, int);
+    float uint_to_float(unsigned int, float, float, int);
     //Properties
     int id;
-    double pos, vel, tor;
-}
+    double pos_val, vel_val, tor_val;
+};
 
 #endif
